@@ -1,0 +1,75 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0b1a17;
+  --card:    #10251f;
+  --border:  #1f4a3e;
+  --accent:  #3ddc97;
+  --accent2: #9af0c9;
+  --text:    #dcefe8;
+  --muted:   #7fa398;
+  --gold:    #f2c94c;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent2); }
+
+header {
+  background: #06120f;
+  border-bottom: 2px solid var(--border);
+  padding: 14px 20px;
+}
+.wrap { max-width: 860px; margin: 0 auto; width: 100%; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 20px; }
+.brand .logo {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  color: #06120f; display: grid; place-items: center; font-weight: 800; font-size: 15px;
+}
+.brand .amp { color: var(--accent); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent); }
+
+main { flex: 1; padding: 36px 20px 48px; }
+
+.hero { text-align: center; padding: 24px 0 36px; }
+.hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.15; margin-bottom: 14px; }
+.hero p { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 8px 0 32px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.card h3 { color: var(--accent2); font-size: 17px; margin-bottom: 6px; }
+.card p { color: var(--muted); font-size: 15px; }
+
+.doc h1 { font-size: 32px; margin-bottom: 4px; }
+.doc .updated { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+.doc h2 { font-size: 21px; color: var(--accent2); margin: 30px 0 10px; }
+.doc p, .doc li { margin-bottom: 10px; }
+.doc ul { padding-left: 22px; }
+.note {
+  background: var(--card); border-left: 4px solid var(--accent);
+  border-radius: 8px; padding: 14px 18px; margin: 16px 0;
+}
+.todo { background: #3a2f0b; color: var(--gold); padding: 1px 6px; border-radius: 4px; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
